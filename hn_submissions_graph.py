@@ -23,7 +23,7 @@ for submission in submission_ids[:30]:
     
     submission_dict = {
     'title':response_dict['title'],
-    'link':('htt://news.ycombinator.com/item?id-' + str(submission)),
+    'xlink':('https://news.ycombinator.com/item?id=' + str(submission)),
     'value':response_dict.get('descendants', 0)
     }
     submission_dicts.append(submission_dict)
@@ -35,7 +35,7 @@ submission_dicts = sorted(submission_dicts, key=itemgetter('value'),
 titles = []
 for submission_dict in submission_dicts:
     print("\nTitle:", submission_dict['title'])
-    print("Discussion link:", submission_dict['link'])
+    print("Discussion link:", submission_dict['xlink'])
     print("Comments:", submission_dict['value'])
     titles.append(submission_dict['title'])
     
